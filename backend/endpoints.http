@@ -6,22 +6,8 @@ POST http://127.0.0.1:8000/api/app/estudiante
 Content-Type: "application/json"
 
 {
+    "codigo"; "000",
     "nombre": "Andres",
     "email": "andres@test.com"
 }
 
-### Consultar un contacto por id
-GET http://127.0.0.1:8000/api/app/contacto/9
-
-### Modificar un contacto
-PUT http://127.0.0.1:8000/api/app/contacto/90
-Content-Type: "application/json"
-
-{
-    "nombre": "Anita",
-    "email": "anita@test.com",
-    "telefono": "369852"
-}
-
-### Eliminar contacto
-DELETE http://127.0.0.1:8000/api/app/contacto/9
