@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Estudiante</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+    
+    <form name="contactoForm" id="contactoForm">
+        <h1>Registro Estudiante</h1>
+        <div>
+            <input name="Codigo" type="text" placeholder="Codigo" required>
+        </div>
+        <div>
+            <input name="nombres" type="text" placeholder="Nombres" required>
+        </div>
+        <div>
+            <input name="email" type="email" placeholder="Email" required>
+        </div>
+        <div id="notasContainer"> </div>
+        <div>
+            <button type="button" onclick="agregarNota()">Agregar Nota</button>
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+
+    
+    
+    <script>
+        let contadorNotas = 0;
+
+        function agregarNota() {
+            contadorNotas++;
+
+            const nuevoDiv = document.createElement("div");
+
+            const nuevoInput = document.createElement("input");
+            nuevoInput.type = "text";
+            nuevoInput.name = `nota_${contadorNotas}`;
+            nuevoInput.placeholder = `Nota ${contadorNotas}`;
+            nuevoInput.required = true;
+
+            nuevoDiv.appendChild(nuevoInput);
+
+            document.getElementById("notasContainer").appendChild(nuevoDiv);
+        }
+    </script>
+</body>
+</html>
